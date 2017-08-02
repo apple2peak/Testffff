@@ -1,0 +1,12 @@
+.clearfix{ *zoom:1; }
+.clearfix:after{ content: "\00A0"; display: block; visibility: hidden; width: 0; height: 0; clear: both; font-size: 0; line-height: 0; overflow: hidden; }
+
+body{ font:12px/1.5 'Hiragino Sans GB','\5FAE\8F6F\96C5\9ED1',tahoma,arial,sans-serif; }
+
+a{ text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+img{ vertical-align: bottom; }
+
+.fl{ float: left; }
+.fr{ float: right; }

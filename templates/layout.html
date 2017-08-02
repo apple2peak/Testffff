@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>接口自动化平台</title>
+<link rel="Shortcut Icon" href="{{ url_for('static', filename='images/icons/favicon.ico') }}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- <link href="static/assets/third_party/bootstrap/css/bootstrap.css" rel="stylesheet"> -->
+<link href="{{ url_for('static', filename='assets/third_party/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='assets/third_party/bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet">
+{#<link href="{{ url_for('static', filename='assets/third_party/bootstrap-datetimepicker/css/datetimepicker.css') }}" rel="stylesheet">#}
+{#<link href="{{ url_for('static', filename='assets/third_party/bootstrap-datepicker/css/datepicker.css') }}" rel="stylesheet">#}
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/third_party/font-awesome/css/font-awesome.min.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/ace.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/ace.min.css') }}" />
+{#<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/ace-responsive.css') }}" />#}
+{#<link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}" />#}
+{#<link rel="stylesheet" href="{{ url_for('static', filename='css/msg.css') }}" />#}
+
+<script src="{{ url_for('static', filename='assets/js/jquery-1.10.2.min.js') }}"></script>
+{#<script src="{{ url_for('static', filename='assets/js/jquery-ui-1.10.3.custom.min.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/jquery.ui.touch-punch.min.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/jquery.hotkeys.min.js') }}"></script>#}
+<script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+{#<script src="{{ url_for('static', filename='assets/js/bootstrap-wysiwyg.min.js') }}"></script>#}
+
+{#<script src="{{ url_for('static', filename='assets/js/markdown/markdown.min.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/markdown/bootstrap-markdown.min.js') }}"></script>#}
+
+<script src="{{ url_for('static', filename='assets/js/bootbox.min.js') }}"></script>
+{#<script src="{{ url_for('static', filename='assets/js/ace-elements.min.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/js/ace-extra.min.js') }}"></script>#}
+
+<script src="{{ url_for('static', filename='assets/third_party/jquery/jquery.cookie.js') }}"></script>
+{#<script src="{{ url_for('static', filename='assets/third_party/jquery/jquery.hotkeys.js') }}"></script>#}
+
+<script src="{{ url_for('static', filename='assets/js/sidebar.js') }}"></script>
+{#<script src="{{ url_for('static', filename='assets/third_party/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='assets/third_party/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='js/bootstrap-datepicker.js') }}"></script>#}
+{#<script src="{{ url_for('static', filename='js/passport.js') }}"></script>#}
+<script src="{{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+
+</head>
+<body class="navbar-fixed">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a href="/index" class="brand">
+{#                <small><i class="icon-home"></i> </small>#}
+{#                <img src="{{ url_for('static', filename='images/youku_test.png') }}"/>#}
+                <small><i class="icon-home"></i> 接口自动化平台</small>
+            </a>
+            <!--/.brand-->
+              <ul class="nav ace-nav pull-right">
+                <li class="light-blue">
+                    {% if data.login_name %}
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <span class="user-info">你好：{{ data.login_name }}</span>
+                        <i class="icon-caret-down"></i>
+                    </a>
+                    <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+                        <li>
+                        <a href="/user/logout" id="cms-logout">
+                            <i class="icon-off"></i>
+                            登出
+                        </a>
+                        </li>
+                    </ul>
+                    {% endif %}
+                </li>
+            </ul>
+            <!-- /.ace-nav--> 
+        </div><!--/.container-fluid-->
+    </div><!--/.navbar-inner-->
+</div>
+<div class="main-container container-fluid">
+    <a class="menu-toggler" id="menu-toggler" href="#">
+        <span class="menu-text"></span>
+    </a>
+    <div class="sidebar" id="sidebar">
+        <ul class="nav nav-list">
+             {% macro draw_sub(submenu,dataSub) %}
+             {{ caller() }}
+                 <ul class="submenu">
+                    {% for sub in submenu %}
+                        <!-- <li {%if sub.active %}class="active"{% endif %}> -->
+                        <li {%if dataSub==sub["name"] %}class="active"{% endif %}>
+                            <a href="{{ sub.url }}" {% if sub.submenu %}class="dropdown-toggle"{% endif %} target="{{ sub.target }}">
+                            <i class="icon-double-angle-right"></i> {{ sub.title }} </a>
+                        </li>
+                    {% endfor %} 
+                </ul>
+            {% endmacro %}
+            {% for menu in g.menu_list %}
+{#                <li class="active ">#}
+                <li {% if data["menu"]==menu["name"] %}class="active open"{% endif %}>
+                <a href="{{menu.url}}" {% if menu.submenu %}class="dropdown-toggle"{% endif %}>
+                <i class="{% if menu.icon_class %}{{ menu.icon_class }}{% else %}icon-book{% endif %}"></i><span class="menu-text">{{ menu.title }}</span>
+                <b class="arrow icon-angle-right"></b></a>
+                {% if menu.submenu %}
+                    {% call draw_sub(menu.submenu,data["sub_menu"]) %}{% endcall %}
+                {% endif %}
+              </li>
+            {% endfor %}
+        </ul>
+        <!--/.nav-list-->
+        <div class="sidebar-collapse" id="sidebar-collapse">
+            <i class="icon-double-angle-left"></i>
+        </div>
+    </div>
+
+{% block content %}{% endblock %}
+
+</div><!--/.main-container-->
+<script src="{{ url_for('static', filename='assets/js/table-fixed-header.js') }}"></script>
+<script>
+$('.table-fixed-header').fixedHeader();
+bootbox.setLocale("zh_CN");
+</script>
+</body>
+</html>

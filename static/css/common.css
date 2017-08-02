@@ -1,0 +1,35 @@
+#navi-chose li {
+    float: left;
+    display: block;
+}
+a.navi-title:link    {color:blue;}
+a.navi-title:visited {font-size:150%;}
+a.navi-title:hover   {color:red;}
+
+
+pre {
+    outline: 1px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+}
+
+.string {
+    color: green;
+}
+
+.number {
+    color: darkorange;
+}
+
+.boolean {
+    color: blue;
+}
+
+.null {
+    color: magenta;
+}
+
+.key {
+    color: red;
+}
+

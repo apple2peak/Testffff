@@ -1,0 +1,127 @@
+.msg-btn-file{
+	position:relative;
+	overflow:hidden;
+}
+
+.msg-btn-file input[type=file]{
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block;
+}
+
+#show-cover {
+	width: 300px;
+	height: 180px;
+	border: 1px solid #cccccc;
+}
+
+#show-cover  img{
+	width: 300px;
+	height: 180px;
+}
+
+#show-pic {
+	/*margin-left: 160px;*/
+	height: 270px;
+	width:450px;
+	border: 1px solid #cccccc;
+}
+
+#show-pic  img{
+	width: 150px;
+	height: 90px;
+}
+
+.wysiwyg-toolbar .dropdown-menu .btn {
+    margin-right: 8px;
+    margin-left: 1px
+}
+
+.wysiwyg-toolbar input[type=file] {
+    position: fixed;
+    z-index: -10;
+    opacity: 0;
+    max-width: 0;
+    max-height: 0;
+    display: block
+}
+
+.rem-show-cover {
+	width: 100px;
+	height: 60px;
+	border: 1px solid #cccccc;
+}
+
+.rem-show-cover  img{
+	width: 100px;
+	height: 60px;
+}
+
+#modal-step3 .form-horizontal .control-label{
+	width:60px;
+}
+
+#modal-step3 .form-horizontal .controls{
+	margin-left: 70px;
+}
+
+#model-msg-rem .form-horizontal .control-label{
+	width:60px;
+}
+
+#model-msg-rem .form-horizontal .controls{
+	margin-left: 70px;
+}
+
+#model-user-rem .form-horizontal .control-label{
+	width:60px;
+}
+
+#model-user-rem .form-horizontal .controls{
+	margin-left: 70px;
+}
+
+#modal-wizard div.paging_bootstrap ul{
+	width:100%;
+}
+
+
+#modal-wizard{
+	width: 60%;
+	margin: 0 auto;
+	left: 20%;
+	top: 10%;
+	min-width: 800px;
+}
+
+#model-msg-rem{
+	width: 60%;
+	margin: 0 auto;
+	left: 20%;
+	top: 10%;
+	min-width: 800px;
+}
+
+#model-user-rem{
+	width: 60%;
+	margin: 0 auto;
+	left: 20%;
+	top: 10%;
+	min-width: 800px;
+}
+
+#modal-wizard button.close{
+	font-size: 32px;
+    margin-top: 10px;
+    margin-right: 10px;
+}

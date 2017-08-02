@@ -1,0 +1,41 @@
+.Canvas{ font: 10pt Georgia; background-color:#ECECEC; color:#000000; border:solid 1px #CECECE;}
+.ObjectBrace{ color:#00AA00; font-weight:bold;}
+.ArrayBrace{ color:#0033FF; font-weight:bold;}
+.PropertyName{ color:#CC0000; font-weight:bold;}
+.String{ color:#007777;}.Number{ color:#AA00AA;}
+.Boolean{  color:#0000FF;}
+.Function{  color:#AA6633;  text-decoration:italic;}
+.Null{  color:#0000FF;}
+.Comma{  color:#000000;  font-weight:bold;}
+PRE.CodeContainer{  margin-top:0px;  margin-bottom:0px;}
+#Layer1 {
+	position:absolute;
+	width:493px;
+	height:287px;
+	z-index:1;
+	left: 293px;
+	top: 56px;
+	background-color: #99CCCC;
+}
+#Layer2 {
+	position:absolute;
+	left:258px;
+	top:247px;
+	width:255px;
+	height:171px;
+	z-index:1;
+}﻿
+.new{
+	color:red;
+	font-weight:bold;
+}
+a {
+    color: #3366CC;
+    text-decoration: none;
+}
+.box{
+	backgroundColor:gray;
+	position:absolute;
+	z-index:1;
+	filter:alpha(opacity:3);
+}

@@ -1,0 +1,133 @@
+#ruleset .pane_header{
+    float:right;
+}
+.pane_header{
+    margin-bottom: 5px;
+}
+#search{
+    margin-bottom: 25px;
+}
+.publish_status{
+    margin-bottom: 14px;
+}
+.rules{
+    float: left;
+}
+
+ .rule{
+    margin-bottom: 6px;
+}
+
+ .rule span{
+    margin-right: 10px;
+}
+.navi_manual_add .filter, .search{
+    display: inline;
+}
+.navi_manual_add .search{
+    margin-left: 415px;
+}
+.navi_manual_add{
+    margin-bottom: 10px;
+}
+.navi_manual_add .filter button{
+    margin-left: 15px;
+}
+.grasp_add{
+    margin-bottom: 6px;
+}
+.grasp_add div{
+    display: inline;
+    margin-right: 25px;
+    margin-bottom: 4px;
+}
+.sort div,label{
+    display: inline;
+}
+
+#grouprules div{
+    margin-bottom: 15px;
+}
+
+#grouprules span.help-inline{
+    width: 90px;
+    text-align: right;
+}
+
+#contentModal_body span.help-inline{
+    width: 90px;
+    text-align: right;
+}
+
+#infoRuleEditModal span.help-inline{
+    width: 90px;
+    text-align: right;
+}
+
+#userRuleEditModal span.help-inline{
+    width: 90px;
+    text-align: right;
+}
+
+#grouprules .avail_sites label{
+    margin-right: 17px;
+}
+
+#grouprules .rulestype label{
+    margin-right:45px;
+}
+
+#grouprules .more_apply label{
+    margin-right:70px;
+}
+
+#grouprules button{
+    width: 85px;
+    margin-right:45px;
+}
+
+
+#rulesModal .modal-body {
+    max-height: 800px;
+}
+
+#rulesModal .modal-header {
+    margin-top: 15px;
+}
+
+#rulesModal{
+    width: 1000px;
+    margin: -5px 0 0 -500px;
+}
+
+#rulesModal .modal-header .search {
+    margin-left: 15px;
+    display: inline;
+}
+
+#rulesModal .modal-header .select_rule button{
+    float: right;
+}
+
+#contentlist .type{
+    display: inline;
+    float:right;
+
+}
+#contentlist .type select{
+    width: 70px;
+
+}
+
+.recm_info{
+    margin-top: 10px;
+}
+
+.rcmcover{
+    margin-left: 20px;
+    display: inline;
+}
+
+
+
+
